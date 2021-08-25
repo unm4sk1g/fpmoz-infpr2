@@ -1,28 +1,42 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <Alert />
+    <v-progress-linear indeterminate v-if="loading"></v-progress-linear>
+    <left-sidebar />
+    <v-main class="container-padding overflow-y-lg-hidden bg">
+      <div class="pt-4 mx-4 pb-6 mt-n1 grey--text text--darken-3 font-weight-bold">
+        <span>{{ this.$route.name }}</span>
+      </div>
+      <router-view></router-view>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import LeftSidebar from "./components/LeftSidebar";
+import Alert from "./components/Alert"
+import {mapGetters} from "vuex";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    LeftSidebar,
+    Alert
+  },
+  computed: {
+    ...mapGetters({"loading": "common/loading"})
+  },
+  data: () => ({
+    //
+  }),
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.alert--bottom-fixed {
+  width: 100%;
+  z-index: 999;
+  bottom: 0px;
+  position: fixed !important;
 }
 </style>
