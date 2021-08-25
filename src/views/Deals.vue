@@ -96,8 +96,7 @@ export default {
       return ago ? moment(date * 1000).fromNow() : moment(date * 1000).format("DD MMM YYYY HH:ss")
     },
     goToDeal(deal) {
-      window.location.href = `https://www.cheapshark.com/redirect?dealID=${deal.dealID}`;
-
+      return window.open(`https://www.cheapshark.com/redirect?dealID=${deal.dealID}`);
     },
     updatePage(page) {
       this.currentPage = page;
