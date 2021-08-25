@@ -39,4 +39,7 @@ export default {
   bottom: 0px;
   position: fixed !important;
 }
+.row-pointer tbody tr:hover {
+  cursor: pointer;
+}
 </style>
