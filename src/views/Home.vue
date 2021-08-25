@@ -1,9 +1,9 @@
 <template>
   <div class="d-flex align-center justify-center flex-column full-height">
     <img src="../assets/game-icon-png-4488.png" alt="logo" />
-    <h1>Game deals</h1>
+    <h1>Popusti igrica</h1>
     <router-link to="/deals" class="mt-4">
-      <v-btn color="primary">Go to deals</v-btn>
+      <v-btn color="primary">Idi na popuste</v-btn>
 
     </router-link>
   </div>

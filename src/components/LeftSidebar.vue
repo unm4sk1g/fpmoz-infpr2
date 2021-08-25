@@ -37,7 +37,7 @@ export default {
     return {
       items: [
         {
-          title: 'Deals',
+          title: 'Popusti',
           icon: 'mdi-currency-usd',
           route: '/deals'
         },

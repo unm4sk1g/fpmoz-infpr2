@@ -56,28 +56,28 @@ export default {
         sortable: false,
       },
       {
-        text: 'Game title',
+        text: 'Naziv igre',
         value: 'title'
       },
       {
-        text: 'Deal price',
+        text: 'Cijena sa popustom',
         value: 'salePrice',
       },
       {
-        text: 'Normal price',
+        text: 'Normalna cijena',
         value: 'normalPrice',
         sortable: false
       },
       {
-        text: 'Deal rating',
+        text: 'Ocjena popusta',
         value: 'dealRating'
       },
       {
-        text: 'Release date',
+        text: 'Datum izlaska',
         value: 'releaseDate'
       },
       {
-        text: 'Last change',
+        text: 'Zadnja promjena',
         value: 'lastChange'
       }
     ]
@@ -164,7 +164,7 @@ export default {
   mounted() {
     this.addAlert({
       type: "warning",
-      message: "Bug with sorting is caused by Public API limitation."
+      message: "Bug sa sortiranjem je izazvan caching-om na Public API-u."
     })
     this.getDeals();
   }
