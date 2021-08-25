@@ -89,7 +89,8 @@ export default {
   },
   methods: {
     ...mapActions({
-      "getDeals": "games/getDeals"
+      "getDeals": "games/getDeals",
+      "addAlert": "common/addAlert",
     }),
     formatDate(date, ago) {
       return ago ? moment(date * 1000).fromNow() : moment(date * 1000).format("DD MMM YYYY HH:ss")
@@ -102,7 +103,8 @@ export default {
       this.currentPage = page;
     },
     goToPage(page) {
-      this.getDeals({pageNumber: page})
+      this.getDeals({pageNumber: page});
+      this.currentPage = page;
     },
     updateOptions(options) {
       if (options.sortBy.length > 0) {
@@ -160,6 +162,10 @@ export default {
     }
   },
   mounted() {
+    this.addAlert({
+      type: "warning",
+      message: "Bug with sorting is caused by Public API limitation."
+    })
     this.getDeals();
   }
 }

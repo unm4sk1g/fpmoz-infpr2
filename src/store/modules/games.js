@@ -17,10 +17,6 @@ const actions = {
             this.dispatch('common/setLoading', true);
             Api.getDeals(params).then(response => {
                 commit('SET_DEALS', response.data);
-                this.dispatch('common/addAlert', {
-                    type: 'success',
-                    message: `Games fetched successfully`
-                }, {root: true});
                 resolve(response);
             }).catch(err => {
                 this.dispatch('common/addAlert', {

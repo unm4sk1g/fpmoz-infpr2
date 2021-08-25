@@ -6,6 +6,7 @@
       dark
       mobile-breakpoint="600"
   >
+    <v-icon size="48" color="white" class="d-flex mb-8 mt-4">mdi-gamepad</v-icon>
     <v-list class="pa-0">
       <v-list-item
           v-for="item in items"
